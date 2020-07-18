@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { v4 as uuidv4 } from 'uuid'
 import Box from './Box';
 import NewBoxForm from './NewBoxForm';
 import './BoxList.css';
@@ -11,19 +12,22 @@ class BoxList extends Component {
     };
     this.addColorBox = this.addColorBox.bind(this);
   }
-  addColorBox(newBox) {
-    // this.setState((prevState) => console.log(prevState));
-    console.log('run from form');
-    console.log(newBox);
+  removeColorBox(id) {
+    console.log(id)
+    console.log(`Id to remove ${id}`)
+  }
+  addColorBox(box) {
+    // let id = uuidv4()
+    const newBox = { ...box, id: uuidv4() };
     this.setState((prevState) => {
       return {
-        boxes: [...prevState, newBox],
+        boxes: [...prevState.boxes, newBox],
       };
     });
   }
   render() {
     let boxes = this.state.boxes.map((b) => (
-      <Box width={b.width} height={b.height} bgc={b.bgc} />
+      <Box key={b.id} width={b.width} height={b.height} bgc={b.bgc} removeColorBox={this.removeColorBox} />
     ));
     return (
       <div>
