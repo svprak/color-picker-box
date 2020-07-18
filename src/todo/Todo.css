@@ -1,0 +1,25 @@
+.Todo {
+  display: flex;
+  justify-content: center;
+  /* background-color: lightblue; */
+  margin-top: 50px;
+  margin: auto;
+}
+.Todo-items {
+  list-style: none;
+  width: 500px;
+}
+.Todo-item {
+  margin-bottom: 5px;
+  border-bottom: olivedrab solid 1px;
+  padding-bottom: 5px;
+}
+.Todo-item button {
+  margin-left: 15px;
+  border-radius: 5px;
+}
+.Todo-item button:hover {
+  color: white;
+  background-color: red;
+  cursor: pointer;
+}

@@ -8,13 +8,17 @@ class BoxList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      boxes: [{ width: '100px', height: '100px', bgc: 'red' }],
+      boxes: [{ width: '100px', height: '100px', bgc: 'red', id: 1 }],
     };
     this.addColorBox = this.addColorBox.bind(this);
+    this.removeColorBox = this.removeColorBox.bind(this);
   }
   removeColorBox(id) {
-    console.log(id)
-    console.log(`Id to remove ${id}`)
+    this.setState((prevState) => {
+      return {
+        boxes: prevState.boxes.filter(box => box.id !== id)
+      }
+    })
   }
   addColorBox(box) {
     // let id = uuidv4()
@@ -27,7 +31,7 @@ class BoxList extends Component {
   }
   render() {
     let boxes = this.state.boxes.map((b) => (
-      <Box key={b.id} width={b.width} height={b.height} bgc={b.bgc} removeColorBox={this.removeColorBox} />
+      <Box key={b.id} id={b.id} idth={b.width} height={b.height} bgc={b.bgc} removeColorBox={this.removeColorBox} />
     ));
     return (
       <div>

@@ -6,8 +6,9 @@ class Box extends Component {
     super(props)
     this.handleRemoveColorBox = this.handleRemoveColorBox.bind(this)
   }
-  handleRemoveColorBox(evt) {
-    this.props.removeColorBox(evt.target)
+  handleRemoveColorBox() {
+    console.log('In Box ', this.props.id)
+    this.props.removeColorBox(this.props.id)
   }
   render() {
     const style = {
