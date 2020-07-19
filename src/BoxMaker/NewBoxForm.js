@@ -6,9 +6,9 @@ class NewBoxForm extends Component {
     this.state = { width: '', height: '', bgc: '' };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handlSubmit = this.handlSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handlSubmit(evt) {
+  handleSubmit(evt) {
     evt.preventDefault();
     this.props.addColorBox(this.state);
     this.setState({
@@ -26,7 +26,7 @@ class NewBoxForm extends Component {
     return (
       <div className="NewBoxForm">
         <h2>Ad New Box Color:</h2>
-        <form onSubmit={this.handlSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <label htmlFor="width">
             Width:
             <input

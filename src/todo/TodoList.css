@@ -1,0 +1,30 @@
+.TodoList {
+  background-color: #289fed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 20px;
+  width: 500px;
+  flex-direction: column;
+
+  -webkit-box-shadow: 5px 5px 0px 0px #289fed, 10px 10px 0px 0px #5fb8ff,
+    15px 15px 0px 0px #a1d8ff, 20px 20px 0px 0px #cae6ff,
+    25px 25px 0px 0px #e1eeff, 0px 7px 2px 4px rgba(0, 0, 0, 0);
+  box-shadow: 5px 5px 0px 0px #289fed, 10px 10px 0px 0px #5fb8ff,
+    15px 15px 0px 0px #a1d8ff, 20px 20px 0px 0px #cae6ff,
+    25px 25px 0px 0px #e1eeff, 0px 7px 2px 4px rgba(0, 0, 0, 0);
+}
+.TodoList-title {
+  text-align: left;
+  align-self: flex-start;
+  padding-left: 40px;
+  color: white;
+  width: 420px;
+}
+.TodoList-title p {
+  margin-top: -20px;
+  font-size: 0.8em;
+  border-bottom: solid 1px white;
+  padding-bottom: 5px;
+}

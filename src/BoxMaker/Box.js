@@ -12,8 +12,8 @@ class Box extends Component {
   }
   render() {
     const style = {
-      width: this.props.width,
-      height: this.props.height,
+      width: `${this.props.width}em`,
+      height: `${this.props.height}em`,
       backgroundColor: this.props.bgc,
     };
     return (

@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import Todo from './Todo'
 import NewTodoForm from './NewTodoForm'
-
+import './TodoList.css'
 export default class TodoList extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            items: []
+            items: [{ item: "Clean Kitchen", id: "1234", done: false }]
         }
         this.addItem = this.addItem.bind(this)
         this.removeItem = this.removeItem.bind(this)
@@ -21,8 +21,6 @@ export default class TodoList extends Component {
         })
     }
     addItem(item) {
-        // console.log("Call from child")
-        // console.log(newItem)
         const newItem = { ...item, id: uuidv4() }
         this.setState(prevState => {
             return {
@@ -32,13 +30,16 @@ export default class TodoList extends Component {
     }
     render() {
         // console.log('current state', this.state.items)
-        let todoItems = this.state.items.map(item => <Todo key={item.id} id={item.id} item={item.item} removeItem={this.removeItem} />)
+        let todoItems = this.state.items.map(item => <Todo key={item.id} id={item.id} done={item.done} item={item.item} removeItem={this.removeItem} />)
 
         return (
             <div className="TodoList">
-                <h1>Todo List</h1>
-                <NewTodoForm addItem={this.addItem} />
+                <div className="TodoList-title">
+                    <h1>Todo List</h1>
+                    <p>A Simple React Todo List App.</p>
+                </div>
                 {todoItems}
+                <NewTodoForm addItem={this.addItem} />
             </div>
         )
     }

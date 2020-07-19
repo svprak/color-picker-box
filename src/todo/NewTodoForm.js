@@ -24,10 +24,13 @@ export default class NewTodoForm extends Component {
         return (
             <div className="NewTodoForm">
                 <form className="NewTodoForm-form" onSubmit={this.handleSubmit}>
-                    <label htmlFor="item">To do what?
-                        <input id="item" name="item" value={this.state.item} placeholder="what are you buying?" onChange={this.handleAddItem} />
-                    </label>
-                    <button>Add</button>
+
+                    <label htmlFor="item">New Todo</label>
+                    <div>
+                        <input id="item" name="item" value={this.state.item} placeholder="New Todo" onChange={this.handleAddItem} />
+                        <button>Add Todo</button>
+                    </div>
+
                 </form>
             </div>
         )

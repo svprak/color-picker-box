@@ -1,25 +1,29 @@
 .Todo {
+  /* margin: auto; */
   display: flex;
-  justify-content: center;
-  /* background-color: lightblue; */
-  margin-top: 50px;
-  margin: auto;
-}
-.Todo-items {
-  list-style: none;
-  width: 500px;
+  background-color: rgba(211, 211, 211, 0.281);
+  width: 460px;
+  margin-bottom: 1px;
+  justify-content: space-between;
+  padding-right: 40px;
 }
 .Todo-item {
-  margin-bottom: 5px;
-  border-bottom: olivedrab solid 1px;
-  padding-bottom: 5px;
-}
-.Todo-item button {
-  margin-left: 15px;
-  border-radius: 5px;
-}
-.Todo-item button:hover {
+  padding: 10px 0 10px 40px;
   color: white;
-  background-color: red;
+  text-transform: capitalize;
+  /* text-decoration: line-through; */
+}
+
+.Todo-btn {
+  display: flex;
+}
+.Todo button {
+  margin-left: 3px;
+  color: white;
+  border: none;
+  background-color: transparent;
+}
+.Todo button:hover {
+  color: #0044ff;
   cursor: pointer;
 }
